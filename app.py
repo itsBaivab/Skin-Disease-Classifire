@@ -58,27 +58,157 @@ def main():
             st.write(f"Confidence: {confidence:.2f}")
             #user_input = st.text_input("Describe the patient's condition and symptoms:")
             user_input=class_names[predicted_class]
-            prompt = f"Describe the treatment options for {user_input}. Provide 3 examples, each within 150 words."
-            if st.button("Get Treatment Recommendations"):
-                if prompt:
+            #prompt = f"Describe the treatment options for {user_input}. Provide 3 examples, each within 150 words."
+            #if st.button("Get Treatment Recommendations"):
+                #if prompt:
         # Create a list of message objects as per OpenAI's API requirements
-                    messages = [
-                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
-                    {"role": "user", "content": prompt}
-                    ]
+                   # messages = [
+                    #{"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    #{"role": "user", "content": prompt}
+                   # ]
         
         # Call the OpenAI API for chat completion
+                   # response = openai.ChatCompletion.create(
+                    #model="gpt-3.5-turbo",
+                   # messages=messages
+                    #)
+
+        # Extract and display the assistant's response
+                    #assistant_response = response['choices'][0]['message']['content']
+                   # st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                #else:
+                    #st.warning("Please describe the patient's condition and symptoms.")
+            
+            prompt2 = f"Describe when to see doctor for {user_input} within 150 words."
+            if st.button("When to see a doctor?"):
+                if prompt2:
+                    messages = [
+                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt2}
+                    ]
+                    
                     response = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=messages
                     )
-
-        # Extract and display the assistant's response
                     assistant_response = response['choices'][0]['message']['content']
                     st.write("Skin Disease Diagnosis Doctor:", assistant_response)
                 else:
                     st.warning("Please describe the patient's condition and symptoms.")
-
+            prompt3 = f"Describe the causes of {user_input} within 150 words."
+            if st.button("Causes of the disease?"):
+                if prompt3:
+                    messages = [
+                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt3}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")
+            prompt4 = f"Describe the symptoms of {user_input} within 150 words."
+            if st.button("Symptoms of the disease?"):
+                if prompt4:
+                    messages = [
+                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt4}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")
+            prompt5 = f"Describe the diagnosis of {user_input} within 150 words."
+            if st.button("Diagnosis of the disease?"):
+                if prompt5:
+                    messages = [
+                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt5}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")
+            prompt6 = f"Describe the treatment of {user_input} within 150 words."
+            if st.button("Treatment of the disease?"):
+                if prompt6:
+                    messages = [
+                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt6}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")
+            prompt7 = f"Describe the prevention of {user_input} within 150 words."
+            if st.button("Prevention of the disease?"):
+                if prompt7:
+                    messages = [
+                    {"role": "system", "content": "You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt7}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")
+            prompt8 = f"Describe the complications of {user_input} within 150 words."
+            if st.button("Complications of the disease?"):
+                if prompt8:
+                    messages = [
+                    {"role": "system", "content": f"You are a skin disease diagnosis doctor."},
+                    {"role": "user", "content": prompt8}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")
+            prompt9 = st.text_input('Anything you want to ask about the disease?','')
+            #prompt9 = f"Describe the risk factors of {user_input} within 150 words."
+            if st.button("Click to ask the doctor"):
+                if prompt9:
+                    messages = [
+                    {"role": "system", "content": f"You are a skin disease diagnosis doctor.You have diagnosed {user_input}"},
+                    {"role": "user", "content": prompt9}
+                    ]
+                    
+                    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=messages
+                    )
+                    assistant_response = response['choices'][0]['message']['content']
+                    st.write("Skin Disease Diagnosis Doctor:", assistant_response)
+                else:
+                    st.warning("Please describe the patient's condition and symptoms.")        
+                    
 
     items = [
     '1. Eczema',
